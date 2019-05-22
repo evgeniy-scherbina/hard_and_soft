@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package robot;
+option go_package = "github.com/evgeniy-scherbina/hard_and_soft/robot";
+
+//import "google/api/annotations.proto";
+//import "google/protobuf/empty.proto";
+//import "github.com/mwitkow/go-proto-validators/validator.proto";
+//import "protoc-gen-swagger/options/annotations.proto";
+
+message Empty {}
+
+message EnvironmentInfo {
+    uint64 Id = 1;
+    float EnvironmentTemp = 2;
+    int64 AtmospherePressure = 3;
+    float Altitude = 4;
+    uint32 Humidity = 5;
+    uint32 RobotBatteryLvl = 6;
+    uint32 Brightness = 7;
+}
+
+message HumanHeartInfo{
+    uint64 Id = 1;
+    uint32 HeartRate = 2;
+    float HeartRhythm = 3;
+    uint32 DeviceBatteryLvl = 4;
+}
+
+message HumanCommonInfo{
+    uint64 Id = 1;
+    uint32 Humidity = 2;
+    float Temp = 3;
+}
+
+message FlowerpotInfo{
+    bool PouredOn = 1;
+    uint32 Humidity = 2;
+}
+
+service RobotService {
+    rpc PutEnvironmentInfo(EnvironmentInfo) returns (Empty) {}
+    rpc PutHumanHeartInfo(HumanHeartInfo) returns (Empty) {}
+    rpc PutHumanCommonInfo(HumanCommonInfo) returns (Empty) {}
+    rpc PutFlowerpotInfo(FlowerpotInfo) returns (Empty) {}
+}
