@@ -14,24 +14,28 @@ type rpcServer struct {}
 
 func (s *rpcServer) PutEnvironmentInfo(ctx context.Context, req *robot.EnvironmentInfo) (*robot.Empty, error) {
 	log.Println("PutEnvironmentInfo")
+	fmt.Println(req)
 
 	return &robot.Empty{}, nil
 }
 
 func (s *rpcServer) PutHumanHeartInfo(ctx context.Context, req *robot.HumanHeartInfo) (*robot.Empty, error) {
 	log.Println("PutHumanHeartInfo")
+	fmt.Println(req)
 
 	return &robot.Empty{}, nil
 }
 
 func (s *rpcServer) PutHumanCommonInfo(ctx context.Context, req *robot.HumanCommonInfo) (*robot.Empty, error) {
 	log.Println("PutHumanCommonInfo")
+	fmt.Println(req)
 
 	return &robot.Empty{}, nil
 }
 
 func (s *rpcServer) PutFlowerpotInfo(ctx context.Context, req *robot.FlowerpotInfo) (*robot.Empty, error) {
 	log.Println("PutFlowerpotInfo")
+	fmt.Println(req)
 
 	return &robot.Empty{}, nil
 }

@@ -9,7 +9,14 @@ def run():
     # of the code.
     channel = grpc.insecure_channel('localhost:8080')
     stub = robot_pb2_grpc.RobotServiceStub(channel)
-    response = stub.PutEnvironmentInfo(robot_pb2.EnvironmentInfo(EnvironmentTemp=1))
+    response = stub.PutEnvironmentInfo(robot_pb2.EnvironmentInfo(
+        EnvironmentTemp=1,
+        AtmospherePressure=2,
+        Altitude=3,
+        Humidity=4,
+        RobotBatteryLvl=5,
+        Brightness=6
+    ))
     # print("Robot client received: " + response)
 
 run()
